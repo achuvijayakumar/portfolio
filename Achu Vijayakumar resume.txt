@@ -1,0 +1,108 @@
+ACHU VIJAYAKUMAR
+Thiruvananthapuram, Kerala, India
+📧 [achuvijayakumar@outlook.com](mailto:achuvijayakumar@outlook.com) | 📞 +91 8589868108 / 8589068108
+🔗 linkedin.com/in/achuvijayakumar | achuvijayakumar.online
+
+---
+
+## PROFESSIONAL SUMMARY
+
+Backend-focused Software Engineer with demonstrated success in building automation platforms, data pipelines, and real-time systems. Skilled in distributed architectures using Redis, multi-process agents, and multi-user Streamlit dashboards. Proven ability to lead backend architecture end-to-end: designing Redis-driven workflows, scaling services, and deploying integrated APIs. Strong foundation in debugging, trading automation, file-based workflows, and developer tooling. Built execution pipelines, real-time analytics engines, and system infrastructure powering algorithmic trading workflows.
+
+---
+
+## SKILLS
+
+**Languages:** Python, Java, JavaScript
+**Backend & Frameworks:** Streamlit, J2EE, FastAPI, Redis
+**Frontend Tools:** Streamlit, HTML, CSS
+**Database Management:** QuestDB, MySQL, DuckDB (MotherDuck)
+**Data Tools:** Pandas, CSV pipelines
+**Tools:** Linux, Git, Docker, crontab, systemctl, pdfplumber, Eclipse IDE, VS Code, Antigravity
+**Additional:** Technical analysis, market data strategy, risk automation
+
+---
+
+## PROFESSIONAL EXPERIENCE
+
+### Software Engineer – LPE Software Solutions Pvt. Ltd.
+
+*Sep 2025 – Present*
+
+**– Distributed Backend Trading Platform**
+
+* Engineered an event-driven backend using Redis as the central message bus, decoupling the UI from parallel processing agents.
+* Orchestrated task management via impl.py, coordinating agent polling (orderbook, balance, positions) and triggering downstream Redis-based automation.
+* Established a custom Order Management System (OMS) to coordinate multi-leg trades using atomic Redis HDEL locking for concurrency control.
+* Designed and enforced an OI crossover automation engine using Net Put/Call tracking, spot-based triggers, and hysteresis filters.
+* Executed a real-time payoff simulator with vectorized Black-Scholes pricing and live Greeks rendered via Plotly inside Streamlit.
+* Initiated watcher modules (e.g., LevelCEWatcher) to monitor breakout levels and push actionable intents.
+* Applied structured logging, self-healing token auth, and Telegram notifications for system visibility and reliability.
+* Incorporated MotherDuck to warehouse PnL history, utilizing SQL-based FIFO logic via DuckDB window functions.
+* Developed a robust PDF ingestion and ETL routine to normalize trade data using pdfplumber and regex-based table parsing.
+* Applied cache-warming strategies to preload 50k+ instrument entries into Redis hashes, enabling O(1) lookups.
+
+**Streamlit UI & Redis-Driven Workflow Tools**
+*Constructed multi-tab Streamlit dashboards with real-time feedback and Redis-bound actions (e.g., PLACE_ORDER, FETCH_BALANCE).
+*Enhanced form components using session state and dynamic field generation for expiry, strike, option type, and lot.
+
+**File Automation, CLI Scripts** 
+*Generated UID-specific CSV pipelines to persist live trade/book data across users.
+*Built CLI tools (test_ui.py, cli_fetch.py) to validate Redis calls and API responses.
+*Enforced automation for data refresh, log cleanup, and Redis expiry management using cron and bash.
+
+**Nifty Analytics Toolkit**
+*Created automation flows for data extraction and transformation from internal trading records.
+*Executed expiry selection and instrument resolution using dropdown-driven UI components backed by local text-based lookup.
+*Generated LTP/strike queries for real-time option discovery.
+---
+
+### Scrutiny Assistant – Commissioner for Entrance Examinations, Kerala
+
+*Mar 2025 – Apr 2025*
+
+* Reviewed and validated 5500+ KEAM exam applications; performed 6000+ re-verifications.
+* Issued, cleared, and reissued memos based on flagged document discrepancies.
+* Coordinated with applicants and centers; resolved 100+ support queries.
+
+### Technical Assistant (Software) – ActsInfo
+
+*Jul 2022 – Jul 2024*
+
+* Delivered 4 web applications with dynamic content and secure membership features.
+* Created MySQL-backed systems for registration, payments, and profile workflows.
+* Improved site performance with responsive UIs using HTML, CSS, and JavaScript.
+
+---
+
+## EDUCATION
+
+**B.Tech – Electronics and Communication Engineering**
+Marian Engineering College, APJ Abdul Kalam Technological University
+**Hindi Sahithyacharya** – Kerala Hindi Prachar Sabha
+**Higher Secondary (Computer Science)** – Kendriya Vidyalaya SAP
+
+---
+
+## CERTIFICATIONS
+
+* Oracle Cloud Infrastructure 2025 – Generative AI Professional
+  *Certified in building, evaluating, and deploying LLM-based apps on OCI using RAG and LangChain.*
+* Oracle Cloud Infrastructure 2025 – AI Foundations Associate
+  *Gained foundational understanding of AI/ML and generative models in Oracle Cloud.*
+* Oracle Cloud Infrastructure 2025 – Foundations Associate
+  *Validated knowledge of core OCI services including compute, storage, and networking.*
+* AWS SimuLearn: Cloud Computing Essentials
+  *Hosted static website using S3 and learned AWS fundamentals.*
+* AWS SimuLearn: Cloud First Steps
+  *Deployed EC2 instances; learned about AWS regions and zones.*
+* Java & J2EE – Keltron Knowledge Centre
+  *Core Java, JDBC, Servlets, JSP, JSTL, session tracking.*
+* Cybersecurity Fundamentals – IBM SkillsBuild
+  *Covered cyber threats, security frameworks, cryptography.*
+
+---
+
+## LANGUAGES
+
+English (Fluent), Hindi (Proficient), Malayalam (Native)

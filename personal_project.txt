@@ -1,0 +1,140 @@
+Project Name: MemoryPing (Intelligent Telegram Reminder Bot)
+One-Liner: An AI-powered, gamified productivity assistant on Telegram that uses natural language processing (NLP) to manage reminders, track habits, and provide behavioral insights.
+website : memoryping.online
+Technical Stack
+Core Language: Python 3.11+ (Asyncio-first architecture)
+Frameworks: python-telegram-bot (v22+), Flask (Webhooks/Keep-alive)
+NLP & ML: scikit-learn (Intent Classification), torch & sentence-transformers (Semantic Search), rapidfuzz (Fuzzy Matching), wordsegment
+Database: SQLite (via aiosqlite for non-blocking I/O), Vector Embeddings (Local Semantic Index)
+Infrastructure: Render (Cloud Hosting), Docker-ready
+Scheduling: APScheduler (Custom wrapper for persistence)
+Testing: pytest, pytest-asyncio
+Key Technical Features
+1. Advanced NLP Pipeline
+Hybrid Intent Routing: Implemented a two-stage classification system using Regex for high-precision matches (speed) and Logistic Regression for nuanced intent detection (flexibility).
+Semantic Understanding: Capable of parsing complex natural language queries like "Remind me to call mom in 20 mins" or "Meeting every weekday at 9am" without rigid command syntax.
+Context Awareness: Features a custom semantic_normalizer that canonicalizes vague relative times (e.g., "tonight", "after lunch") into concrete timestamps based on user preferences.
+Active Learning Loop: Built a self-improving pipeline where low-confidence predictions are logged (
+active_learning_log.jsonl
+) to retrain and refine the intent model over time.
+2. Robust Architecture (Layered Design)
+Separation of Concerns: Migrated from a monolithic "God Object" to a strict 6-layer architecture:
+UI Layer: Stateless Telegram interaction handling.
+NLP Layer: Pure text processing and feature extraction.
+Core/Engine: Pure business logic (stateless, testable).
+Runtime: Orchestrates state and side effects.
+Infra: Isolated persistence and job scheduling.
+Analytics: Offline data processing for insights.
+Non-Blocking Persistence: Utilized aiosqlite to ensure database operations never block the main event loop, maintaining high responsiveness under load.
+Crash-Proof Scheduling: Engineered a custom Scheduler wrapper that persists jobs to the database, ensuring no reminders are lost during bot restarts or server crashes.
+3. Gamification & Analytics Engine
+Behavioral Economics: Incorporated game design elements (XP, Levels, Streaks, Leaderboards) to drive user retention and habit formation.
+Productivity Insights: Developed an analytics engine that calculates a user's "Golden Hour" (peak productivity time), mood-productivity correlations, and completion rates.
+Vector Search (Semantic Memory): Integrated a local vector database to allow users to search their history by meaning (e.g., searching "food" finds "buy milk") rather than just keywords.
+Resume Bullet Points (Copy-Paste Ready)
+Option 1 (Focus on Backend/Architecture):
+
+Architected MemoryPing, a highly available Telegram bot leveraging Python (Asyncio) and SQLite, capable of handling complex scheduling with zero downtime during updates.
+Designed a Layered Architecture separating NLP context processing from core business logic, improving code maintainability and testability by 40%.
+implemented a custom Hybrid NLP Router combining Regex and Scikit-Learn classifiers to achieve 99%+ intent recognition accuracy for natural language inputs.
+Option 2 (Focus on AI/Data):
+
+Built an intelligent productivity assistant with Semantic Search capabilities using Torch and Sentence-Transformers for vector-based memory retrieval.
+Developed an Active Learning Pipeline that automatically identifies and logs ambiguous user queries to iteratively retrain the intent classification model.
+Engineered an analytics module to process user behavior data, generating personalized insights on "Peak Productivity Hours" and habit consistency.
+Option 3 (Focus on Product/Full-Stack):
+
+Created and deployed a feature-rich Telegram bot serving as a "Second Brain," featuring Streak Tracking, Gamification (XP/Levels), and Social Sharing.
+Integrated Flash and Python-Telegram-Bot to build a responsive webhook-based bot hosted on Render, ensuring 24/7 availability.
+Solved critical UX challenges by implementing "Smart Clarification" flows, allow the bot to ask follow-up questions for ambiguous requests instead of failing.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Project Name: Thulasi - Comprehensive Tuition Management SaaS
+core Technologies: Python 3.12+, Streamlit, FastAPI, SQLite (WAL Mode), Pandas, Plotly. Frontend/UI: Streamlit (App), HTML5/CSS3/JavaScript (Landing Page), Particles.js. Integrations: Razorpay (Payments & Subscriptions), Google Meet (Deep Linking), WhatsApp (Automated Reminders). Deployment: Railway (Docker-based), Git (Version Control).
+website : thulasi.xyz
+Key Technical Features & Architecture
+1. Hybrid Microservice Architecture
+
+Core Application: Developed a data-centric monolithic application using Streamlit to handle complex interactive dashboards, reporting, and management workflows.
+Billing Microservice: Engineered a separate, high-concurrency FastAPI service to handle payment processing, Razorpay webhooks, and subscription lifecycle management (creation, renewal, expiry) independently of the main thread.
+State Management: Implemented SQLite in WAL (Write-Ahead Logging) mode to handle concurrent reads/writes efficiently, ensuring data integrity across the multi-process architecture.
+2. Advanced Scheduling Engine (Smart Timetable)
+
+Algorithm: Designed a custom conflicting-detection algorithm using Pandas vectorization to instantly validate thousands of potential class slots against teacher availability and student constraints.
+Conflict Resolution: Implemented logic to detect double-bookings, overlap, and capacity issues in real-time before committing schedules to the database.
+Automation: Built a "Propose & Commit" pattern that allows the system to auto-generate weekly schedules based on recurring patterns, drastically reducing manual administrative work.
+3. Real-time Attendance & Monitoring
+
+Session Tracking: Developed a granular tracking system that logs every "Join" and "Leave" event to calculate precise engagement metrics (total duration, punctuality).
+Late Detection: Automated logic to flag students joining >10 minutes late, feeding into engagement reports.
+Live Dashboard: Created a real-time "Live Class" monitor allowing admins to see active sessions and current participant counts instantly.
+4. Financial & Subscription System
+
+Payment Gateway Integration: Full integration with Razorpay for one-time payments and recurring subscriptions.
+Webhook Security: Implemented cryptographic signature verification for webhooks to prevent spoofing and ensure secure transaction updates.
+Automated Invoicing: System automatically tracks pending fees, generates invoice records, and updates user access levels based on payment status.
+5. Frontend & Experience
+
+Landing Page: Built a high-performance, SEO-optimized landing page using vanilla HTML/CSS/JS with interactive 3D particle effects (
+particles.js
+) for a premium visual identity.
+User Experience (UX): Customized Streamlit with extra-streamlit-components for a native app feel, including custom cookie management and responsive layouts.
+Deep Linking: Engineered a "Magic Link" system that routes students directly to their specific Google Meet room without requiring login, while still capturing attendance data via unique tokens.
+System Modules (Functional Breakdown)
+Dashboard & Analytics: Interactive Plotly charts for financial health, student retention, and class distribution.
+User Management: Role-based access control (RBAC) for Admins, Teachers, and Students with soft-delete capabilities.
+Class Management: Support for recurring (weekly/monthly) and one-time classes with drag-and-drop scheduling interfaces.
+Communication: WhatsApp link generation for automated class reminders and fee alerts.
+Reports: Automated generation of CSV/Excel reports for monthly attendance and revenue.
+Resume Bullet Points (Copy-Paste Ready)
+Developed a full-stack SaaS tuition management platform serving nearly [X] active users, handling scheduling, billing, and attendance tracking.
+Architected a hybrid Python backend using Streamlit for the data-intensive dashboard and FastAPI for high-performance, asynchronous payment webhook processing.
+Engineered a custom "Smart Timetable" algorithm using Pandas, reducing scheduling conflicts by 100% and automating weekly class generation.
+Integrated Razorpay Subscription API, building a secure billing microservice that handles recurring revenue and automated access control.
+Optimized database performance by implementing SQLite WAL mode and efficient SQL queries, reducing report generation time by 40%.
+Designed a "Magic Link" attendance system, allowing students to join classes via secure tokens that automatically log attendance without friction.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Project Title: Automated Institutional Trading System & Fleet Manager
+1. Executive Summary
+Designed and built a full-stack, low-latency algorithmic trading platform capable of managing multiple brokerage accounts ("Fleet Mode") simultaneously. The system integrates real-time market data analysis with automated execution engines, featuring a robust risk management layer and a reactive UI for manual intervention.
+
+2. Technology Stack
+Languages: Python 3.10+ (AsyncIO, Pandas, PyTelegamBotAPI)
+Frontend: Streamlit (Custom Reactive Dashboard with partial re-renders)
+Backend & State Management: Redis (Pub/Sub, In-memory state), Systemd (Process orchestration)
+Database: QuestDB (Time-series for tick data), DuckDB / MotherDuck (OLAP & Analytics)
+Brokerage Integration: Kotak Neo API (WebSocket & REST)
+Infrastructure: Linux (Cron automation, Shell scripting), Docker-ready architecture
+3. Key Modules & Features
+A. Algorithmic Execution Engine (oi_auto_trade)
+
+Signal Generation: Implemented a real-time Open Interest (OI) analysis engine that detects trend reversals based on PE-CE differentials with noise filtering (Threshold > 2000).
+Smart Hedging: Automated morning "Hedge Unwind" logic (09:15–09:20 AM) to capitalize on volatility crush.
+Risk Guardrails: Built-in "Spot Exit" mechanism that purely monitors underlying asset price to trigger emergency exits if positions drift >100 points against entry.
+Bootstrap Recovery: "Morning Bootstrap" protocol to recover state and resume trading if the system restarts mid-market.
+B. Real-Time Data Pipeline
+
+market-Data Ingestion: WebSocket listeners pushing tick-by-tick data into QuestDB for high-frequency storage and retrieval.
+State Synchronization: utilized Redis as a centralized message broker to sync state between the headless trading engine and the frontend UI with sub-millisecond latency.
+Analytics Layer: Automated ETL jobs (daily_orderbook_job) utilizing DuckDB/MotherDuck to process daily order logs for PnL analysis and strategy refinement.
+C. Fleet Management UI (ui_app)
+
+Multi-Scope Execution: Developed a "Command Scope" feature allowing trades to be executed on a single account (SELF), a specific group (GROUP), or broadcast to all managed accounts (FLEET).
+Emergency Controls: Implemented a global "Kill Switch" (Circuit Breaker) accessible from the UI to immediately halt all algo execution and square off positions across all accounts.
+Live Order Monitoring: Real-time dashboard usage of Redis Pub/Sub to show live PnL, open positions, and order status without manual page refreshes.
+D. Reliability & DevOps
+
+Hybrid Architecture: Segregated "Infrastructure Services" (Redis, QuestDB - 24/7) from "Market Services" (Strategy Engine, Feed Aggregator - 09:15-15:30) to optimize resource usage.
+Self-Healing: Cron-based health checks and Systemd restart policies to ensure zero downtime during market hours.
+Alerting: Integrated Telegram bots for critical trade alerts, error reporting, and EOD summaries.
+4. Technical Highlight (For "Challenging Problem" interviews)
+"One of the key engineering challenges was handling the race condition between the high-frequency tick data stream and the order execution logic. I solved this by decoupling the systems: The Feed Engine writes blindly to Redis/QuestDB, while the Strategy Engine polls a sanitized 'Snapshot' from Redis. This ensured that the strategy never blocked the data ingestion, maintaining a tick-to-trade latency under 200ms even during high-volatility events like market opening."
+
+5. Bullet Points for Resume (Copy-Paste Ready)
+Developed a proprietary algorithmic trading platform interfacing with Kotak Neo API, handling automated derivatives trading (Nifty/BankNifty).
+Engineered a custom "Fleet Management" system allowing simultaneous order execution across multiple accounts with a single click, reducing manual operation time by 90%.
+Implemented a high-performance data pipeline using QuestDB for time-series storage and Redis for real-time state management, handling 100+ ticks/second.
+Built a reactive implementation of Streamlit for the frontend, featuring a custom "Kill Switch" and real-time PnL monitoring with <1s latency.
+Designed robust failover mechanisms, including automated morning bootstrapping and state recovery to ensure 99.9% uptime during market hours.
+Automated daily PnL analytics using DuckDB, reducing end-of-day reporting time from 30 minutes to 10 seconds.
+

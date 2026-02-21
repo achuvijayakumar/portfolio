@@ -1,0 +1,61 @@
+/* Mascot Animation */
+.mascot-container {
+    position: fixed;
+    bottom: 20px;
+    left: -100px;
+    /* Start off-screen */
+    z-index: 50;
+    animation: walkAcross 15s linear infinite;
+    pointer-events: none;
+    /* Let clicks pass through */
+}
+
+.mascot-img {
+    width: 64px;
+    /* Adjust based on generated image */
+    height: auto;
+    image-rendering: pixelated;
+    /* Keep it crisp */
+    animation: bounce 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes walkAcross {
+    0% {
+        left: -100px;
+        transform: scaleX(1);
+        /* Facing right */
+    }
+
+    45% {
+        left: 45%;
+        transform: scaleX(1);
+    }
+
+    50% {
+        left: 50%;
+        transform: scaleX(1) rotate(-10deg);
+        /* Pause/Look */
+    }
+
+    55% {
+        left: 50%;
+        transform: scaleX(-1) rotate(0deg);
+        /* Turn around */
+    }
+
+    100% {
+        left: -100px;
+        /* Walk back left */
+        transform: scaleX(-1);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}

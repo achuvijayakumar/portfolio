@@ -1,0 +1,785 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #2563eb;
+    --border-color: #000000;
+
+    --shadow-pixel: 4px 4px 0px 0px #000000;
+    --shadow-pixel-sm: 2px 2px 0px 0px #000000;
+
+    --font-pixel: 'VT323', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-pixel);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 20px;
+    line-height: 1.5;
+    overflow-x: hidden;
+
+    /* Grid Background */
+    background-image:
+        linear-gradient(#e5e7eb 1px, transparent 1px),
+        linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.pixel-border {
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-pixel);
+    background: white;
+}
+
+.pixel-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-pixel);
+    font-family: var(--font-pixel);
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.pixel-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.pixel-btn:active {
+    background-color: #f3f4f6;
+}
+
+.section-title {
+    font-size: 3rem;
+    border-bottom: 4px solid black;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-bottom: 2px solid black;
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: 2px solid black;
+    box-shadow: var(--shadow-pixel-sm);
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.hero-box {
+    background: white;
+    border: 2px dashed #9ca3af;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.status-badge {
+    background: black;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-pixel);
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+.section {
+    padding: 5rem 1rem;
+    border-top: 2px solid black;
+}
+
+.about-bio {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    font-size: 1.4rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    padding: 1.5rem;
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+/* Experience Section */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.timeline-number {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid black;
+    box-shadow: var(--shadow-pixel);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.window-header {
+    background: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.window-control {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border: 1px solid gray;
+}
+
+.project-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-tag {
+    background: white;
+    border: 1px solid black;
+    box-shadow: 2px 2px 0 0 black;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Certificate Cards */
+.cert-card {
+    background: white;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.cert-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.6);
+    background: #f0f0ff;
+}
+
+.cert-card:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+}
+
+.cert-badge {
+    background: black;
+    color: white;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.cert-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+/* Contact Section */
+.contact-section {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    position: relative;
+}
+
+.contact-grid-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    background-image:
+        linear-gradient(#333 1px, transparent 1px),
+        linear-gradient(90deg, #333 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+.contact-box {
+    border: 4px solid white;
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    box-shadow: 8px 8px 0 0 white;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 2rem;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 2px solid black;
+    font-weight: bold;
+    color: inherit;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #c0c0c0;
+        /* Match desktop OS theme */
+        border-bottom: 2px solid black;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .timeline-number {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Mobile Enhancements for Designer Layer */
+    .os-window {
+        padding: 0 !important;
+        /* Reset container padding */
+    }
+
+    .os-window>div:last-child {
+        padding: 1rem !important;
+        /* Reduce inner content padding */
+    }
+
+    /* Hide desktop elements on small screens for clarity */
+    .desktop-icon,
+    .parallax-shape {
+        display: none !important;
+    }
+}
+
+/* =========================================
+   ADVANCED VISUAL UPGRADES (CRT & ANIMATIONS) 
+   ========================================= */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-left: 2px solid black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border: 2px solid #e5e7eb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+    /* Accent color */
+}
+
+/* CRT Scanline Overlay */
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 9999;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.95;
+    }
+
+    5% {
+        opacity: 0.85;
+    }
+
+    10% {
+        opacity: 0.95;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0.95;
+    }
+
+    100% {
+        opacity: 0.95;
+    }
+}
+
+/* Selection */
+::selection {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Glitch Effect on Hover for Titles */
+.section-title:hover {
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+    color: var(--accent-color);
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Scroll Animation Classes */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Float Animation for Mascot */
+.mascot-container {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Button Active Press Effect */
+.pixel-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: none !important;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   DESIGNER LAYERING & OS METAPHORS 
+   ========================================= */
+
+/* Deep Shadows & Layering */
+.depth-shadow {
+    box-shadow:
+        4px 4px 0 #000,
+        8px 8px 0 rgba(0, 0, 0, 0.2),
+        12px 12px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.depth-shadow:hover {
+    transform: translate(-2px, -2px);
+    box-shadow:
+        6px 6px 0 #000,
+        10px 10px 0 rgba(0, 0, 0, 0.2),
+        14px 14px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* OS Window Container */
+.os-window {
+    background: white;
+    border: 2px solid black;
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    /* For window content clipping */
+}
+
+.window-bar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 0.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    cursor: default;
+}
+
+.window-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-win {
+    width: 20px;
+    height: 20px;
+    background: #c0c0c0;
+    border: 2px solid white;
+    border-right-color: gray;
+    border-bottom-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
+    color: black;
+    cursor: pointer;
+}
+
+.btn-win:active {
+    border: 2px solid gray;
+    border-right-color: white;
+    border-bottom-color: white;
+}
+
+/* Desktop Icons Wrapper */
+.desktop-layer {
+    position: fixed;
+    top: 70px;
+    /* Below navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    pointer-events: none;
+    /* Let clicks pass through to content */
+    z-index: -1;
+    /* Behind everything */
+    overflow: hidden;
+}
+
+.desktop-icon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    cursor: pointer;
+    pointer-events: auto;
+    /* Re-enable clicks for icons */
+    transition: transform 0.2s;
+}
+
+.desktop-icon:hover {
+    transform: scale(1.1);
+}
+
+.icon-img {
+    width: 48px;
+    height: 48px;
+    background: #ddd;
+    /* Placeholder if no image */
+    border: 2px solid black;
+    margin-bottom: 0.5rem;
+    image-rendering: pixelated;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icon-label {
+    background: black;
+    color: white;
+    padding: 2px 4px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Floating Shapes / Parallax Elements */
+.parallax-shape {
+    position: absolute;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Taskbar Enhancement (modifying Navbar) */
+.navbar {
+    background: #c0c0c0;
+    /* Classic OS gray */
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+    /* Make it stick out */
+}
+
+.nav-link {
+    background: #c0c0c0;
+    border: 2px solid white;
+    border-right-color: gray;
+    border-bottom-color: gray;
+    color: black;
+    box-shadow: 1px 1px 0 black;
+}
+
+.nav-link:hover {
+    background: #000080;
+    color: white;
+}
+
+.nav-link:active {
+    border: 1px solid gray;
+    border-right-color: white;
+    border-bottom-color: white;
+    transform: translate(1px, 1px);
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Achu Vijayakumar",
+    "role": "Software Engineer",
+    "status": "System.State: ONLINE",
+    "bio": [
+        "Backend-focused Software Engineer with demonstrated success in building automation platforms, data pipelines, and real-time systems.",
+        "Skilled in distributed architectures using Redis, multi-process agents, and multi-user Streamlit dashboards.",
+        "Proven ability to lead backend architecture end-to-end: designing Redis-driven workflows, scaling services, and deploying integrated APIs.",
+        "Strong foundation in debugging, trading automation, file-based workflows, and developer tooling.",
+        "Built execution pipelines, real-time analytics engines, and system infrastructure powering algorithmic trading workflows."
+    ],
+    "experience": [
+        {
+            "role": "Software Engineer",
+            "company": "LPE Software Solutions",
+            "period": "Sep 2025 – Present",
+            "details": "Engineered an event-driven backend using Redis. Built an OMS for multi-leg trades and OI crossover automation engines."
+        },
+        {
+            "role": "Scrutiny Assistant",
+            "company": "CEE, Kerala",
+            "period": "Mar 2025 – Apr 2025",
+            "details": "Reviewed and validated 5500+ KEAM exam applications; resolved 100+ support queries."
+        },
+        {
+            "role": "Technical Assistant",
+            "company": "ActsInfo",
+            "period": "Jul 2022 – Jul 2024",
+            "details": "Delivered 4 web applications with dynamic content and secure MySQL-backed registration features."
+        }
+    ],
+    "socials": {
+        "github": "https://github.com/achuvijayakumar",
+        "linkedin": "https://linkedin.com/in/achuvijayakumar",
+        "email": "mailto:achuvijayakumar@outlook.com"
+    }
+}

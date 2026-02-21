@@ -1,0 +1,125 @@
+[
+    {
+        "id": "memoryping",
+        "name": "MemoryPing.ai",
+        "type": "system",
+        "icon": "brain",
+        "param": {
+            "problem": "Generic reminder bots lack context awareness.",
+            "solution": "Hybrid NLP Router (Regex + Scikit-Learn) with vector embeddings.",
+            "impact": "Intelligent Telegram bot serving as a 'Second Brain'.",
+            "stack": [
+                "Python",
+                "NLP",
+                "SQLite",
+                "Telegram API"
+            ]
+        },
+        "content": "A smart productivity bot using semantic search and Torch embeddings to understand user intent. It runs an active learning pipeline for self-improvement and gamification features for streak tracking."
+    },
+    {
+        "id": "thulasi-saas",
+        "name": "Thulasi SaaS",
+        "type": "system",
+        "icon": "server",
+        "param": {
+            "problem": "Tuition centers struggle with scheduling & billing.",
+            "solution": "Microservices platform with 'Smart Timetable' detection.",
+            "impact": "Full-Stack SaaS platform drastically reducing admin overhead via automated billing.",
+            "stack": [
+                "FastAPI",
+                "Streamlit",
+                "Pandas",
+                "SQLite WAL"
+            ]
+        },
+        "content": "Comprehensive backoffice system for tuition centers. It features a custom Pandas vectorized scheduling algorithm for conflict prevention, Razorpay subscription billing, and a magic-link attendance tracking system."
+    },
+    {
+        "id": "algo-trade",
+        "name": "Trading Platform",
+        "type": "system",
+        "icon": "chart",
+        "param": {
+            "problem": "Manual trading lacks concurrency control for multi-leg strategies.",
+            "solution": "Event-driven architecture using Redis as a central message bus.",
+            "impact": "Automated derivatives trading and risk management automation.",
+            "stack": [
+                "Python",
+                "Redis",
+                "Streamlit",
+                "DuckDB"
+            ]
+        },
+        "content": "Distributed institution-grade trading platform capable of autonomous multi-leg option strategies via an event-driven Redis backend. Built with a custom OMS."
+    },
+    {
+        "id": "lanea",
+        "name": "LaNéa Gifting",
+        "type": "website",
+        "icon": "gift",
+        "param": {
+            "problem": "Standard e-commerce templates feel cheap.",
+            "solution": "Zero-dependency Vanilla JS with custom 3D magnetic tilt.",
+            "impact": "Premium boutique landing page with high-performance scroll fx.",
+            "stack": [
+                "HTML5",
+                "CSS3",
+                "Vanilla JS"
+            ]
+        },
+        "content": "A luxury gifting boutique website featuring custom parallax effects and a physics-based magnetic cursor."
+    },
+    {
+        "id": "thulasi-web",
+        "name": "Thulasi Web",
+        "type": "website",
+        "icon": "globe",
+        "param": {
+            "problem": "SaaS landing pages need to convert.",
+            "solution": "Performance-first design with 3D Particle Vortex.",
+            "impact": "High-aesthetic product page with texture overlays.",
+            "stack": [
+                "HTML5",
+                "CSS3",
+                "Three.js"
+            ]
+        },
+        "content": "The public-facing landing page for Thulasi, designed to impress with a 3D particle vortex and grain textures."
+    },
+    {
+        "id": "memoryping-web",
+        "name": "MemoryPing Web",
+        "type": "website",
+        "icon": "brain",
+        "param": {
+            "problem": "AI assistants need gamified, engaging presentations.",
+            "solution": "Vanilla HTML/JS with Web Audio API & Canvas Games.",
+            "impact": "Premium, interactive landing page driving bot adoption.",
+            "stack": [
+                "HTML5",
+                "CSS3",
+                "Vanilla JS"
+            ]
+        },
+        "content": "A highly interactive landing page featuring neon glassmorphism, floating hologram heroes, intersection observers, and embedded canvas mini-games."
+    },
+    {
+        "id": "portfolio",
+        "name": "Pixel-OS Portfolio",
+        "type": "website",
+        "icon": "globe",
+        "param": {
+            "problem": "Standard portfolios lack memorable storytelling.",
+            "solution": "React/Vite SPA with custom 3D Canvas & GSAP Motion.",
+            "impact": "Boutique, high-motion animated storytelling experience.",
+            "stack": [
+                "React 18",
+                "TailwindCSS",
+                "GSAP",
+                "Three.js"
+            ]
+        },
+        "content": "A premium personal portfolio with a 3D R3F particle swarm, framer-motion grids, Spline embeds, and intricate scroll-triggered micro-interactions."
+    }
+]

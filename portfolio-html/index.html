@@ -1,0 +1,692 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achu.dev | Backend Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mascot.css">
+</head>
+
+<body>
+
+    <!-- Boot Screen Overlay -->
+    <div id="boot-screen"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; color: #0f0; z-index: 10000; padding: 2rem; font-family: monospace; display: flex; flex-direction: column; justify-content: flex-end;">
+        <div id="boot-text"></div>
+    </div>
+
+    <!-- Desktop Background Layer -->
+    <div class="desktop-layer" id="desktop-layer">
+        <!-- Floating Icons (Simulated) -->
+        <div class="desktop-icon" style="top: 10%; left: 5%; animation: float 4s ease-in-out infinite;">
+            <div class="icon-img"
+                style="background: linear-gradient(45deg, #f0f 25%, transparent 25%, transparent 75%, #f0f 75%, #f0f), linear-gradient(45deg, #f0f 25%, transparent 25%, transparent 75%, #f0f 75%, #f0f); background-size: 10px 10px; background-position: 0 0, 5px 5px;">
+            </div>
+            <span class="icon-label">My PC</span>
+        </div>
+        <div class="desktop-icon" style="top: 30%; right: 10%; animation: float 5s ease-in-out infinite 1s;">
+            <div class="icon-img"
+                style="background: repeating-linear-gradient(45deg, #0ff, #0ff 5px, #fff 5px, #fff 10px);"></div>
+            <span class="icon-label">Network</span>
+        </div>
+        <div class="desktop-icon" style="bottom: 20%; left: 15%; animation: float 6s ease-in-out infinite 0.5s;">
+            <div class="icon-img" style="background: radial-gradient(circle, yellow 20%, orange 80%);"></div>
+            <span class="icon-label">Trash</span>
+        </div>
+
+        <!-- Parallax Shapes -->
+        <div class="parallax-shape" data-speed="0.05"
+            style="top: 10%; right: 20%; font-size: 10rem; color: rgba(0,0,255,0.05);">:::</div>
+        <div class="parallax-shape" data-speed="0.02"
+            style="bottom: 15%; left: 30%; font-size: 15rem; color: rgba(255,0,0,0.05);">###</div>
+    </div>
+
+    <!-- Mascot -->
+    <div class="mascot-container">
+        <img src="pixel_computer_mascot.png" alt="Mascot" class="mascot-img">
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" style="background: black; color: white; padding: 2px 8px;">> START</a>
+            <div class="mobile-menu-btn" id="menu-btn">MENU</div>
+            <div class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">ABOUT.EXE</a>
+                <a href="#skills" class="nav-link">SKILLS.BAT</a>
+                <a href="#experience" class="nav-link">EXP.LOG</a>
+                <a href="#universe" class="nav-link">UNIVERSE.DIR</a>
+                <a href="#contact" class="nav-link">MAIL.COM</a>
+                <div id="clock"
+                    style="margin-left: 1rem; font-weight: bold; background: white; padding: 2px 6px; border: 2px solid gray; border-right-color: white; border-bottom-color: white;">
+                    12:00 PM</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-box depth-shadow os-window">
+            <div class="window-bar">
+                <span>SYSTEM_PROMPT.EXE</span>
+                <div class="window-actions">
+                    <div class="btn-win">_</div>
+                    <div class="btn-win">&square;</div>
+                    <div class="btn-win">X</div>
+                </div>
+            </div>
+            <div style="padding: 2rem;">
+                <div class="status-badge" style="animation: pulse 2s infinite;">System.State: ONLINE</div>
+                <h1>HELLO, I'M <span id="typewriter" style="color: var(--accent-color)"></span><span class="cursor"
+                        style="color: var(--accent-color); animation: blink 1s infinite;">|</span>
+                </h1>
+                <p style="font-size: 1.5rem; margin-bottom: 2rem;">Backend-focused Software Engineer building automation
+                    platforms,
+                    data pipelines, and real-time systems end-to-end.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#universe" class="pixel-btn depth-shadow">[ VIEW UNIVERSE ]</a>
+                    <a href="#contact" class="pixel-btn depth-shadow" style="background: black; color: white;">[ CONTACT
+                        ME ]</a>
+                    <a href="./Achuvijayakumar_resume.pdf" download="Achuvijayakumar_resume"
+                        class="pixel-btn depth-shadow"
+                        style="background: #1a1a2e; color: #0ff; border: 2px solid #0ff;">[ ⬇ DOWNLOAD RESUME ]</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container os-window depth-shadow">
+            <div class="window-bar">
+                <span>ABOUT_ME.USER - Notepad</span>
+                <div class="window-actions">
+                    <div class="btn-win">?</div>
+                    <div class="btn-win">X</div>
+                </div>
+            </div>
+            <div style="padding: 2rem;">
+                <h2 class="section-title" style="border: none;">&lt; ABOUT_ME /&gt;</h2>
+                <div class="about-bio">
+                    <div
+                        style="border-bottom: 2px solid black; padding-bottom: 0.5rem; margin-bottom: 1rem; display: flex; justify-content: space-between;">
+                        <strong>BIO.TXT</strong>
+                        <div style="display: flex; gap: 5px;">
+                            <div style="width: 10px; height: 10px; background: red; border: 1px solid black;"></div>
+                            <div style="width: 10px; height: 10px; background: yellow; border: 1px solid black;"></div>
+                            <div style="width: 10px; height: 10px; background: green; border: 1px solid black;"></div>
+                        </div>
+                    </div>
+                    <p>Backend-focused Software Engineer with demonstrated success in building automation platforms,
+                        data pipelines, and real-time systems.</p>
+                    <p style="margin-top: 1rem;">Skilled in distributed architectures using Redis, multi-process agents,
+                        and multi-user Streamlit dashboards.</p>
+                    <p style="margin-top: 1rem;">Proven ability to lead backend architecture end-to-end: designing
+                        Redis-driven workflows, scaling services, and deploying integrated APIs.</p>
+                    <p style="margin-top: 1rem;">Strong foundation in debugging, trading automation, file-based
+                        workflows, and developer tooling. Built execution pipelines, real-time analytics engines, and
+                        system infrastructure powering algorithmic trading workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title" style="background: black; color: white; padding: 0.5rem 1rem;">&lt; SKILLS_MATRIX
+                /&gt;</h2>
+            <div class="skills-grid">
+                <!-- Languages & Frontend -->
+                <div class="pixel-border skill-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar"><span>LANG_FRONT.DLL</span>
+                        <div class="btn-win">x</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3
+                            style="font-size: 1rem; margin-bottom: 0.5rem; text-decoration: underline; color: var(--accent-color);">
+                            Languages</h3>
+                        <ul style="margin-bottom: 1rem;">
+                            <li>> Python, Java, JavaScript</li>
+                        </ul>
+                        <h3
+                            style="font-size: 1rem; margin-bottom: 0.5rem; text-decoration: underline; color: var(--accent-color);">
+                            Frontend Tools</h3>
+                        <ul>
+                            <li>> Streamlit, HTML, CSS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Backend & Frameworks -->
+                <div class="pixel-border skill-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar"><span>BACKEND.SYS</span>
+                        <div class="btn-win">x</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3
+                            style="font-size: 1rem; margin-bottom: 0.5rem; text-decoration: underline; color: var(--accent-color);">
+                            Backend & Frameworks</h3>
+                        <ul>
+                            <li>> Streamlit</li>
+                            <li>> J2EE</li>
+                            <li>> FastAPI</li>
+                            <li>> Redis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Database & Cloud -->
+                <div class="pixel-border skill-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar"><span>DATA_CLOUD.DAT</span>
+                        <div class="btn-win">x</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3
+                            style="font-size: 1rem; margin-bottom: 0.5rem; text-decoration: underline; color: var(--accent-color);">
+                            Databases</h3>
+                        <ul style="margin-bottom: 1rem;">
+                            <li>> QuestDB, MySQL</li>
+                            <li>> DuckDB (MotherDuck)</li>
+                        </ul>
+                        <h3
+                            style="font-size: 1rem; margin-bottom: 0.5rem; text-decoration: underline; color: var(--accent-color);">
+                            Data Tools & Cloud</h3>
+                        <ul>
+                            <li>> Pandas, CSV pipelines</li>
+                            <li>> AWS (S3, EC2)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tools & Additional -->
+                <div class="pixel-border skill-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar"><span>TOOLS.EXE</span>
+                        <div class="btn-win">x</div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h3
+                            style="font-size: 1rem; margin-bottom: 0.5rem; text-decoration: underline; color: var(--accent-color);">
+                            Tools</h3>
+                        <ul style="margin-bottom: 1rem;">
+                            <li>> Linux, Git, Docker</li>
+                            <li>> crontab, systemctl</li>
+                            <li>> pdfplumber</li>
+                            <li>> Eclipse IDE, VS Code, Antigravity</li>
+                        </ul>
+                        <h3
+                            style="font-size: 1rem; margin-bottom: 0.5rem; text-decoration: underline; color: var(--accent-color);">
+                            Additional</h3>
+                        <ul>
+                            <li style="line-height: 1.4;">> Technical analysis, market data strategy, risk automation
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section" style="background: transparent;">
+        <div class="container os-window depth-shadow">
+            <div class="window-bar"><span>CERTIFICATES.LOG</span>
+                <div class="btn-win">x</div>
+            </div>
+            <div style="padding: 2rem;">
+                <h2 class="section-title" style="border: none;">&lt; CERTIFICATES /&gt;</h2>
+                <div class="certs-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+
+                    <div class="cert-card"
+                        onclick="openCertModal('./certs/Generative AI Professional.jpg', 'OCI Generative AI Professional')">
+                        <div class="cert-badge">Oracle</div>
+                        <div class="cert-name">Generative AI Professional</div>
+                    </div>
+
+                    <div class="cert-card"
+                        onclick="openCertModal('./certs/OCI AI Foundations Associate.jpg', 'OCI AI Foundations Associate')">
+                        <div class="cert-badge">Oracle</div>
+                        <div class="cert-name">AI Foundations Associate</div>
+                    </div>
+
+                    <div class="cert-card"
+                        onclick="openCertModal('./certs/OCI Foundations Associate.jpg', 'OCI Foundations Associate')">
+                        <div class="cert-badge">Oracle</div>
+                        <div class="cert-name">OCI Foundations Associate</div>
+                    </div>
+
+                    <div class="cert-card"
+                        onclick="openCertModal('./certs/AWS SimuLearn Computing Solutions_.jpg', 'AWS SimuLearn Computing Solutions')">
+                        <div class="cert-badge">AWS</div>
+                        <div class="cert-name">Cloud Computing Solutions</div>
+                    </div>
+
+                    <div class="cert-card"
+                        onclick="openCertModal('./certs/AWS SimuLearn Cloud First Step_.jpg', 'AWS SimuLearn Cloud First Steps')">
+                        <div class="cert-badge">AWS</div>
+                        <div class="cert-name">Cloud First Steps</div>
+                    </div>
+
+                    <div class="cert-card"
+                        onclick="openCertModal('./certs/java %26 j2ee_.jpg', 'Java & J2EE – Keltron')">
+                        <div class="cert-badge">Keltron</div>
+                        <div class="cert-name">Java & J2EE</div>
+                    </div>
+
+                    <div class="cert-card" onclick="openCertModal('./certs/IBM.jpg', 'IBM Cybersecurity Fundamentals')">
+                        <div class="cert-badge">IBM</div>
+                        <div class="cert-name">Cybersecurity Fundamentals</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Lightbox Modal -->
+    <div id="cert-modal"
+        style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.85); align-items:center; justify-content:center; cursor:pointer;"
+        onclick="closeCertModal()">
+        <div style="position:relative; max-width:90vw; max-height:90vh;" onclick="event.stopPropagation()">
+            <button onclick="closeCertModal()"
+                style="position:absolute; top:-15px; right:-15px; width:36px; height:36px; background:black; color:white; border:2px solid white; font-size:1.2rem; cursor:pointer; font-family:inherit; z-index:10;">X</button>
+            <img id="cert-modal-img" src="" alt=""
+                style="max-width:90vw; max-height:85vh; border:3px solid white; box-shadow:0 0 40px rgba(0,0,0,0.8); display:block;">
+            <p id="cert-modal-title"
+                style="text-align:center; color:white; margin-top:0.75rem; font-size:1.1rem; font-weight:bold;"></p>
+        </div>
+    </div>
+
+    <!-- Experience Section (Refined) -->
+    <section id="experience" class="section">
+        <div class="container os-window depth-shadow">
+            <div class="window-bar"><span>WORK_HISTORY.DOC</span>
+                <div class="btn-win">x</div>
+            </div>
+            <div style="padding: 2rem;">
+                <h2 class="section-title" style="border: none;">&lt; EXPERIENCE_LOG /&gt;</h2>
+
+                <!-- Condensed List -->
+                <div class="pixel-border" style="background: white; padding: 2rem; margin-bottom: 3rem;">
+                    <h3 style="border-bottom: 2px solid black; margin-bottom: 1.5rem; padding-bottom: 0.5rem;">SUMMARY
+                    </h3>
+
+                    <div
+                        style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; font-weight: bold; border-bottom: 1px dashed gray; padding-bottom: 0.5rem;">
+                        <div>ROLE</div>
+                        <div>COMPANY</div>
+                        <div style="text-align: right;">PERIOD</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>Software Engineer</div>
+                        <div style="color: var(--accent-color);">LPE Software Solutions</div>
+                        <div style="text-align: right;">Sep 2025 – Present</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>Scrutiny Assistant</div>
+                        <div style="color: var(--accent-color);">CEE, Kerala</div>
+                        <div style="text-align: right;">Mar 2025 – Apr 2025</div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+                        <div>Technical Assistant</div>
+                        <div style="color: var(--accent-color);">ActsInfo</div>
+                        <div style="text-align: right;">Jul 2022 – Jul 2024</div>
+                    </div>
+                </div>
+
+                <!-- Detailed History -->
+                <h2 class="section-title" id="history">&lt; DETAILED_HISTORY /&gt;</h2>
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="pixel-border timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 style="font-size: 1.5rem;">SOFTWARE ENGINEER</h3>
+                                    <div style="color: var(--accent-color); font-weight: bold;">@ LPE Software Solutions
+                                        Pvt. Ltd.</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div>Sep 2025 – Present</div>
+                                    <div>Thiruvananthapuram, India</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>> Engineered an event-driven backend using Redis as the central message bus.</li>
+                                <li>> Established a custom OMS to coordinate multi-leg trades using atomic Redis locks.
+                                </li>
+                                <li>> Designed an OI crossover automation engine using Net Put/Call tracking.</li>
+                                <li>> Executed a real-time payoff simulator with vectorized Black-Scholes pricing.</li>
+                                <li>> Incorporated MotherDuck for PnL warehousing via DuckDB window functions.</li>
+                                <li>> Applied cache-warming strategies to preload 50k+ instruments for O(1) lookups.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="pixel-border timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 style="font-size: 1.5rem;">SCRUTINY ASSISTANT</h3>
+                                    <div style="color: var(--accent-color); font-weight: bold;">@ CEE, Kerala</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div>Mar 2025 – Apr 2025</div>
+                                    <div>Contract</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>> Reviewed and validated 5,500+ KEAM applications; 6,000+ re-verifications.</li>
+                                <li>> Issued/cleared memos and handled 100+ applicant support queries.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="pixel-border timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 style="font-size: 1.5rem;">TECHNICAL ASSISTANT</h3>
+                                    <div style="color: var(--accent-color); font-weight: bold;">@ ActsInfo</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div>Jul 2022 – Jul 2024</div>
+                                    <div>Remote</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>> Delivered 4 web applications with dynamic content and secure membership features.
+                                </li>
+                                <li>> Created MySQL-backed systems for registration, payments, and profile workflows.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section" style="background: #f9fafb;">
+        <div class="container">
+            <h2 class="section-title">&lt; EDUCATION /&gt;</h2>
+            <div class="pixel-border timeline-content" style="margin-bottom: 2rem;">
+                <div class="timeline-header">
+                    <div>
+                        <h3 style="font-size: 1.5rem;">B.Tech – Electronics & Communication</h3>
+                        <div style="color: grey; font-weight: bold;">APJ Abdul Kalam Technological University</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div>Marian Engineering College</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pixel-border timeline-content" style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.3rem;">Hindi Sahithyacharya</h3>
+                <p>Kerala Hindi Prachar Sabha</p>
+            </div>
+            <div class="pixel-border timeline-content">
+                <h3 style="font-size: 1.3rem;">Higher Secondary (Computer Science)</h3>
+                <p>Kendriya Vidyalaya SAP</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Universe Section (Separated) -->
+    <section id="universe" class="section">
+        <div class="container">
+            <h2 class="section-title">&lt; MY_UNIVERSE /&gt;</h2>
+
+            <!-- Systems Architecture -->
+            <h3
+                style="font-size: 2rem; border-left: 5px solid black; padding-left: 1rem; margin-bottom: 2rem; background: rgba(255,255,255,0.8); display: inline-block;">
+                SYSTEMS_ARCH</h3>
+            <div class="projects-grid" style="margin-bottom: 4rem;">
+
+                <!-- Project 1: MemoryPing -->
+                <div class="pixel-border project-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar">
+                        <span>MemoryPing (AI Bot)</span>
+                        <div class="window-controls">
+                            <div class="window-control"></div>
+                            <div class="window-control"></div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>Intelligent Telegram Bot</strong> serving as a "Second Brain", featuring gamification
+                            and streak tracking.</p>
+                        <ul style="margin: 1rem 0; list-style: square; padding-left: 1.2rem;">
+                            <li>Hybrid NLP Router (Regex + Scikit-Learn)</li>
+                            <li>Semantic Memory Search with Torch & Vector DB</li>
+                            <li>Active Learning Pipeline handling ambiguous requests</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Telegram API</span>
+                        </div>
+                        <div style="margin-top: auto; padding-top: 1rem; border-top: 2px dashed #ddd;">
+                            <a href="https://memoryping.online" target="_blank" class="pixel-btn"
+                                style="padding: 0.5rem 1rem; font-size: 1rem;">VISIT SITE >></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Thulasi SaaS -->
+                <div class="pixel-border project-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar">
+                        <span>Thulasi (Backoffice)</span>
+                        <div class="window-controls">
+                            <div class="window-control"></div>
+                            <div class="window-control"></div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>Full-Stack SaaS Platform</strong> with hybrid microservices handling scheduling,
+                            billing, and dashboards.</p>
+                        <ul style="margin: 1rem 0; list-style: square; padding-left: 1.2rem;">
+                            <li>"Smart Timetable" detection using Pandas vectorization</li>
+                            <li>Razorpay integrated secure billing API</li>
+                            <li>Magic Link tokenized automated attendance</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">SQLite WAL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Trading System -->
+                <div class="pixel-border project-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar">
+                        <span>Poozhi Platform</span>
+                        <div class="window-controls">
+                            <div class="window-control"></div>
+                            <div class="window-control"></div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>Distributed Trading Platform</strong> capable of autonomous multi-leg option
+                            strategies.</p>
+                        <ul style="margin: 1rem 0; list-style: square; padding-left: 1.2rem;">
+                            <li>Decoupled execution with Redis Feed & Strategy engine</li>
+                            <li>Sub-200ms tick-to-trade execution using Python AsyncIO</li>
+                            <li>"Kill Switch" circuit breaker & Live PnL caching</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python AsyncIO</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">QuestDB</span>
+                            <span class="tech-tag">DuckDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Deployments -->
+            <h3
+                style="font-size: 2rem; border-left: 5px solid black; padding-left: 1rem; margin-bottom: 2rem; background: rgba(255,255,255,0.8); display: inline-block;">
+                WEB_DEPLOYMENTS</h3>
+            <div class="projects-grid">
+
+                <!-- Website 1: LaNéa -->
+                <div class="pixel-border project-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar">
+                        <span>LaNéa Luxury Gifting</span>
+                        <div class="window-controls">
+                            <div class="window-control"></div>
+                            <div class="window-control"></div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>Premium Boutique Landing Page</strong> featuring custom parallax and vanilla JS
+                            physics.</p>
+                        <ul style="margin: 1rem 0; list-style: square; padding-left: 1.2rem;">
+                            <li>Zero-dependency "Vanilla" stack</li>
+                            <li>Custom 3D magnetic tilt effects</li>
+                            <li>High-performance scroll animations</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Vanilla JS</span>
+                        </div>
+                        <div style="margin-top: auto; padding-top: 1rem; border-top: 2px dashed #ddd;">
+                            <a href="https://lanea.online" target="_blank" class="pixel-btn"
+                                style="padding: 0.5rem 1rem; font-size: 1rem;">VISIT SITE >></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website 2: Thulasi Landing -->
+                <div class="pixel-border project-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar">
+                        <span>Thulasi (Landing)</span>
+                        <div class="window-controls">
+                            <div class="window-control"></div>
+                            <div class="window-control"></div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>Product Landing Page</strong> focusing on conversion and aesthetic appeal.</p>
+                        <ul style="margin: 1rem 0; list-style: square; padding-left: 1.2rem;">
+                            <li>Performance-First Vanilla Philosophy</li>
+                            <li>3D Particle Vortex (particles.js)</li>
+                            <li>Grain & Texture Overlays</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Three.js</span>
+                        </div>
+                        <div style="margin-top: auto; padding-top: 1rem; border-top: 2px dashed #ddd;">
+                            <a href="https://thulasi.xyz" target="_blank" class="pixel-btn"
+                                style="padding: 0.5rem 1rem; font-size: 1rem;">VISIT SITE >></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website 3: MemoryPing Landing -->
+                <div class="pixel-border project-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar">
+                        <span>MemoryPing Web</span>
+                        <div class="window-controls">
+                            <div class="window-control"></div>
+                            <div class="window-control"></div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>Interactive Bot Landing Page</strong> featuring embedded canvas games.</p>
+                        <ul style="margin: 1rem 0; list-style: square; padding-left: 1.2rem;">
+                            <li>Neon glassmorphism UI overlay</li>
+                            <li>Web Audio API SFX interactions</li>
+                            <li>Intersection Observer animations</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Vanilla JS</span>
+                        </div>
+                        <div style="margin-top: auto; padding-top: 1rem; border-top: 2px dashed #ddd;">
+                            <a href="https://memoryping.online" target="_blank" class="pixel-btn"
+                                style="padding: 0.5rem 1rem; font-size: 1rem;">VISIT SITE >></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website 4: Portfolio -->
+                <div class="pixel-border project-card os-window depth-shadow" style="margin: 0;">
+                    <div class="window-bar">
+                        <span>Pixel-OS Portfolio</span>
+                        <div class="window-controls">
+                            <div class="window-control"></div>
+                            <div class="window-control"></div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p><strong>Boutique Animated Portfolio</strong> mimicking an operating system environment.</p>
+                        <ul style="margin: 1rem 0; list-style: square; padding-left: 1.2rem;">
+                            <li>React 3D Fiber particle swarm</li>
+                            <li>Framer-motion staggered grids</li>
+                            <li>Scroll-triggered GSAP motion</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-tag">React 18</span>
+                            <span class="tech-tag">TailwindCSS</span>
+                            <span class="tech-tag">Three.js</span>
+                        </div>
+                        <div style="margin-top: auto; padding-top: 1rem; border-top: 2px dashed #ddd;">
+                            <a href="https://achuvijayakumar.online" target="_blank" class="pixel-btn"
+                                style="padding: 0.5rem 1rem; font-size: 1rem;">VISIT SITE >></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" style="background: transparent;">
+        <div class="contact-grid-overlay"></div>
+        <div class="contact-box os-window depth-shadow" style="background: black; margin-top: 4rem;">
+            <div class="window-bar" style="background: #333;"><span>TERMINATE_SESSION ?</span></div>
+            <div style="padding: 2rem;">
+                <p style="font-size: 1.5rem; margin-bottom: 2rem;">I'm currently looking for new opportunities. Whether
+                    you
+                    have a question or just want to say hi, I'll try my best to get back to you!</p>
+
+                <a href="mailto:achuvijayakumar@outlook.com" class="pixel-btn" style="color: black;">SEND_MAIL()</a>
+
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/achuvijayakumar" target="_blank" class="social-icon">LN</a>
+                    <a href="mailto:achuvijayakumar@outlook.com" class="social-icon">@</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>[ 2026 ] © ACHU VIJAYAKUMAR</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

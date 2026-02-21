@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "howler": "^2.2.4",
+    "interactjs": "^1.10.27",
+    "marked": "^17.0.2",
+    "zod": "^4.3.6"
+  }
+}

@@ -1,0 +1,429 @@
+/* Pixel-OS Design System — DARK MODE OVERHAUL */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
+:root {
+    /* Theme: Cyberpunk Terminal */
+    --bg-color: #0a0a0f;
+    --bg-surface: #12121a;
+    --text-main: #e0e0e0;
+    --text-dim: #666680;
+    --accent: #00e5ff;
+    --accent-glow: rgba(0, 229, 255, 0.3);
+    --accent-secondary: #7c3aed;
+    --danger: #ff4444;
+    --success: #00ff88;
+    --border-color: #2a2a3a;
+    --border-bright: #3a3a5a;
+
+    /* Depth & Shadows */
+    --shadow-level-1: 2px 2px 0px 0px rgba(0, 229, 255, 0.15);
+    --shadow-level-2: 4px 4px 0px 0px rgba(0, 229, 255, 0.2);
+    --shadow-level-3: 0 0 20px rgba(0, 229, 255, 0.25), 4px 4px 0px 0px rgba(0, 229, 255, 0.3);
+    --shadow-glow: 0 0 15px rgba(0, 229, 255, 0.2);
+
+    /* Spacing */
+    --header-height: 34px;
+    --taskbar-height: 48px;
+
+    /* Font */
+    --font-pixel: 'VT323', monospace;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    cursor: default;
+}
+
+body {
+    font-family: var(--font-pixel);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-size: 20px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animated Grid Background */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+    animation: gridPulse 8s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Scanline Overlay */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.08) 2px,
+            rgba(0, 0, 0, 0.08) 4px);
+    pointer-events: none;
+    z-index: 99998;
+}
+
+/* Vignette */
+#desktop::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.5) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: var(--text-main);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* ============ WINDOWS ============ */
+.pixel-window {
+    position: absolute;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-bright);
+    box-shadow: var(--shadow-level-1);
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    min-height: 200px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.92) translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pixel-window.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1) translateY(0);
+}
+
+.pixel-window.active {
+    box-shadow: var(--shadow-level-3);
+    border-color: var(--accent);
+    z-index: 100;
+}
+
+.window-header {
+    height: var(--header-height);
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: var(--text-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.75rem;
+    text-transform: uppercase;
+    cursor: grab;
+    border-bottom: 1px solid var(--border-bright);
+    flex-shrink: 0;
+}
+
+.pixel-window.active .window-header {
+    background: linear-gradient(135deg, #0d2137, #0a1929);
+    border-bottom-color: var(--accent);
+}
+
+.window-header:active {
+    cursor: grabbing;
+}
+
+.window-title {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.pixel-window.active .window-title {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent-glow);
+}
+
+.window-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.control-btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.control-btn.close {
+    background: var(--danger);
+    box-shadow: 0 0 4px rgba(255, 68, 68, 0.4);
+}
+
+.control-btn.close:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.8);
+}
+
+.window-content {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    user-select: text;
+    font-family: var(--font-mono);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-bright);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* ============ DESKTOP ICONS ============ */
+.desktop-icon {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.desktop-icon:hover {
+    background: rgba(0, 229, 255, 0.06);
+    border-color: rgba(0, 229, 255, 0.15);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.08);
+}
+
+.desktop-icon:active,
+.desktop-icon.selected {
+    background: rgba(0, 229, 255, 0.12);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+.desktop-icon span {
+    font-size: 14px;
+    margin-top: 4px;
+    color: var(--text-dim);
+    transition: color 0.2s;
+}
+
+.desktop-icon:hover span {
+    color: var(--text-main);
+}
+
+.desktop-icon.selected span {
+    color: var(--accent);
+}
+
+.icon-img {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.desktop-icon:hover .icon-img {
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* ============ TASKBAR ============ */
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--taskbar-height);
+    background: linear-gradient(180deg, #151520, #0a0a12);
+    border-top: 1px solid var(--border-bright);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+}
+
+.start-btn {
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+    color: black;
+    padding: 5px 16px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-right: 20px;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: box-shadow 0.2s, transform 0.1s;
+}
+
+.start-btn:hover {
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-1px);
+}
+
+.start-btn:active {
+    transform: translateY(1px);
+}
+
+.taskbar-clock {
+    margin-left: auto;
+    font-weight: bold;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* ============ BOOT SCREEN ============ */
+#boot-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-color);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-pixel);
+    color: var(--accent);
+}
+
+#boot-screen p {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent-glow);
+    font-size: 22px;
+    margin-bottom: 0.4rem;
+}
+
+/* Boot progress bar */
+.boot-progress-track {
+    width: 300px;
+    height: 6px;
+    background: var(--border-color);
+    margin-top: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.boot-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+/* ============ SELECTION ============ */
+::selection {
+    background: var(--accent);
+    color: var(--bg-color);
+}
+
+/* ============ MARKDOWN BODY (ViewerApp) ============ */
+.markdown-body {
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 15px;
+}
+
+.markdown-body h2 {
+    color: var(--accent);
+    font-size: 22px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+.markdown-body h3 {
+    color: var(--text-main);
+    font-size: 16px;
+}
+
+.markdown-body strong {
+    color: var(--accent);
+}
+
+.markdown-body hr {
+    border-color: var(--border-color);
+    margin: 12px 0;
+}
+
+.markdown-body p {
+    color: var(--text-dim);
+}
