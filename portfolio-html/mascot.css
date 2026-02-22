@@ -52,3 +52,10 @@
         transform: translateY(-12px);
     }
 }
+
+/* Hide mascot on mobile */
+@media (max-width: 768px) {
+    .mascot-container {
+        display: none !important;
+    }
+}

@@ -146,6 +146,8 @@ export class Desktop {
     }
 
     private render() {
+        const isMobile = ('ontouchstart' in window) || window.innerWidth <= 768;
+
         const grid = document.createElement('div');
         grid.style.display = 'flex';
         grid.style.flexDirection = 'column';
@@ -172,10 +174,17 @@ export class Desktop {
                 el.classList.add('selected');
             });
 
-            // Open logic
-            el.addEventListener('dblclick', () => {
-                icon.action();
-            });
+            if (isMobile) {
+                // Single tap to open on mobile
+                el.addEventListener('click', () => {
+                    icon.action();
+                });
+            } else {
+                // Double click to open on desktop
+                el.addEventListener('dblclick', () => {
+                    icon.action();
+                });
+            }
 
             grid.appendChild(el);
         });

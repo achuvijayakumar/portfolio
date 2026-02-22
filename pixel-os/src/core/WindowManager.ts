@@ -1,4 +1,4 @@
-import interact from 'interactjs';
+﻿import interact from 'interactjs';
 
 export interface WindowConfig {
     id: string;
@@ -37,46 +37,23 @@ export class WindowManager {
             return;
         }
 
-        const width = config.width || 300;
-        const height = config.height || 200;
+        const win = document.createElement('div');
+        win.id = config.id;
+        win.className = 'pixel-window';
+
+        // Constrain bounding box to viewport to prevent overflow on mobile.
+        // We use innerHeight - 80 to ensure it fits well within the desktop container bounds,
+        // avoiding interact.js's restrictRect forcibly snapping it back to the top.
+        const width = Math.min(config.width || 300, window.innerWidth - 20);
+        const height = Math.min(config.height || 200, window.innerHeight - 80);
 
         let finalX = config.x || 100;
         let finalY = config.y || 100;
 
-        // Smart Positioning Logic
-        let leftCount = 0;
-        let rightCount = 0;
+        // Prevent spawning out of bounds
+        finalX = Math.max(10, Math.min(finalX, window.innerWidth - width - 10));
+        finalY = Math.max(10, Math.min(finalY, window.innerHeight - height - 10));
 
-        this.windows.forEach(w => {
-            const x = parseFloat(w.style.left) || 0;
-            if (x < window.innerWidth / 2) leftCount++;
-            else rightCount++;
-        });
-
-        // If trying to spawn on the left, but left is crowded (>= 2 windows), move right
-        if (finalX < window.innerWidth / 2 && leftCount >= 2) {
-            finalX = Math.max(50, window.innerWidth - width - 40 - (rightCount * 30));
-            finalY = Math.max(50, finalY + (rightCount * 30));
-        }
-
-        // Prevent exact overlaps by cascading
-        let overlapped = true;
-        while (overlapped) {
-            overlapped = false;
-            this.windows.forEach(w => {
-                const ex = parseFloat(w.style.left) || 0;
-                const ey = parseFloat(w.style.top) || 0;
-                if (Math.abs(ex - finalX) < 15 && Math.abs(ey - finalY) < 15) {
-                    overlapped = true;
-                    finalX += 30;
-                    finalY += 30;
-                }
-            });
-        }
-
-        const win = document.createElement('div');
-        win.id = config.id;
-        win.className = 'pixel-window';
         win.style.left = `${finalX}px`;
         win.style.top = `${finalY}px`;
         win.style.zIndex = `${this.zIndexCounter++}`;
@@ -115,12 +92,15 @@ export class WindowManager {
         this.windows.set(config.id, win);
 
         // Setup Interact.js
+        // We use 'restrict' instead of 'restrictRect' so that only the user's drag pointer 
+        // is confined to the screen (document.body). This allows windows to be dragged partially
+        // off-screen (like a real OS) without magnetically snapping back to the top/center.
         interact(win).draggable({
             allowFrom: '.window-header',
             modifiers: [
-                interact.modifiers.restrictRect({
-                    restriction: 'parent',
-                    endOnly: true
+                interact.modifiers.restrict({
+                    restriction: document.body,
+                    endOnly: false
                 })
             ],
             listeners: {
