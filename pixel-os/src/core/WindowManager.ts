@@ -37,14 +37,51 @@ export class WindowManager {
             return;
         }
 
+        const width = config.width || 300;
+        const height = config.height || 200;
+
+        let finalX = config.x || 100;
+        let finalY = config.y || 100;
+
+        // Smart Positioning Logic
+        let leftCount = 0;
+        let rightCount = 0;
+
+        this.windows.forEach(w => {
+            const x = parseFloat(w.style.left) || 0;
+            if (x < window.innerWidth / 2) leftCount++;
+            else rightCount++;
+        });
+
+        // If trying to spawn on the left, but left is crowded (>= 2 windows), move right
+        if (finalX < window.innerWidth / 2 && leftCount >= 2) {
+            finalX = Math.max(50, window.innerWidth - width - 40 - (rightCount * 30));
+            finalY = Math.max(50, finalY + (rightCount * 30));
+        }
+
+        // Prevent exact overlaps by cascading
+        let overlapped = true;
+        while (overlapped) {
+            overlapped = false;
+            this.windows.forEach(w => {
+                const ex = parseFloat(w.style.left) || 0;
+                const ey = parseFloat(w.style.top) || 0;
+                if (Math.abs(ex - finalX) < 15 && Math.abs(ey - finalY) < 15) {
+                    overlapped = true;
+                    finalX += 30;
+                    finalY += 30;
+                }
+            });
+        }
+
         const win = document.createElement('div');
         win.id = config.id;
         win.className = 'pixel-window';
-        win.style.left = `${config.x || 100}px`;
-        win.style.top = `${config.y || 100}px`;
+        win.style.left = `${finalX}px`;
+        win.style.top = `${finalY}px`;
         win.style.zIndex = `${this.zIndexCounter++}`;
-        if (config.width) win.style.width = `${config.width}px`;
-        if (config.height) win.style.height = `${config.height}px`;
+        win.style.width = `${width}px`;
+        win.style.height = `${height}px`;
 
         // Header
         const header = document.createElement('div');

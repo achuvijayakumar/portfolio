@@ -37,7 +37,7 @@ export class Desktop {
                         content: createProjectsApp(),
                         width: 500,
                         height: 400,
-                        x: 50,
+                        x: 100,
                         y: 50
                     });
                 }
@@ -51,8 +51,8 @@ export class Desktop {
                         id: 'about-window',
                         title: 'About Me',
                         content: createAboutApp(),
-                        width: 400,
-                        height: 500,
+                        width: 520,
+                        height: 520,
                         x: 100,
                         y: 80
                     });
@@ -67,7 +67,7 @@ export class Desktop {
                         id: 'experience-window',
                         title: 'Work Experience',
                         content: createExperienceApp(),
-                        width: 500,
+                        width: 600,
                         height: 550,
                         x: 140,
                         y: 40

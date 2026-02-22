@@ -1,51 +1,44 @@
-/* Mascot Animation */
+/* Mascot Animation — Retro Light Theme */
 .mascot-container {
     position: fixed;
     bottom: 20px;
-    left: -100px;
-    /* Start off-screen */
+    left: -120px;
     z-index: 50;
-    animation: walkAcross 15s linear infinite;
+    animation: walkAcross 20s linear infinite;
     pointer-events: none;
-    /* Let clicks pass through */
+    filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.3));
 }
 
 .mascot-img {
-    width: 64px;
-    /* Adjust based on generated image */
+    width: 80px;
     height: auto;
     image-rendering: pixelated;
-    /* Keep it crisp */
     animation: bounce 0.5s ease-in-out infinite alternate;
 }
 
 @keyframes walkAcross {
     0% {
-        left: -100px;
-        transform: scaleX(1);
-        /* Facing right */
-    }
-
-    45% {
-        left: 45%;
+        left: -120px;
         transform: scaleX(1);
     }
 
-    50% {
-        left: 50%;
-        transform: scaleX(1) rotate(-10deg);
-        /* Pause/Look */
+    42% {
+        left: 42%;
+        transform: scaleX(1);
     }
 
-    55% {
-        left: 50%;
+    48% {
+        left: 48%;
+        transform: scaleX(1) rotate(-8deg);
+    }
+
+    52% {
+        left: 48%;
         transform: scaleX(-1) rotate(0deg);
-        /* Turn around */
     }
 
     100% {
-        left: -100px;
-        /* Walk back left */
+        left: -120px;
         transform: scaleX(-1);
     }
 }
@@ -56,6 +49,6 @@
     }
 
     100% {
-        transform: translateY(-15px);
+        transform: translateY(-12px);
     }
 }
