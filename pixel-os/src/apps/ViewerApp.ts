@@ -7,12 +7,14 @@ export function createViewerApp(project: Project): HTMLElement {
   container.style.fontFamily = 'var(--font-mono)';
   container.className = 'markdown-body';
 
+  const urlMarkdown = project.url ? `**Website:** <a href="${project.url}" target="_blank">${project.url}</a>\n` : '';
+
   const md = `
 ## ${project.name}
 
 **Type:** \`${project.type.toUpperCase()}\`
 **Tech:** ${project.param.stack.map(s => `\`${s}\``).join(' · ')}
-
+${urlMarkdown}
 ---
 
 **PROBLEM:**

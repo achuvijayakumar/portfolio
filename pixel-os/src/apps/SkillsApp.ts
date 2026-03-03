@@ -13,19 +13,23 @@ export function createSkillsApp(): HTMLElement {
         },
         {
             category: 'Frontend Tools',
-            items: ['Streamlit', 'HTML', 'CSS']
+            items: ['HTML', 'CSS']
+        },
+        {
+            category: 'Cloud Platforms',
+            items: ['AWS (S3, EC2)', 'OCI']
         },
         {
             category: 'Databases',
-            items: ['QuestDB', 'MySQL', 'DuckDB (MotherDuck)']
+            items: ['QuestDB', 'Redis', 'MySQL', 'DuckDB (MotherDuck)']
         },
         {
-            category: 'Data Tools & Cloud',
-            items: ['Pandas', 'CSV pipelines', 'AWS (S3, EC2)']
+            category: 'DevOps',
+            items: ['Docker', 'Linux', 'Git', 'crontab', 'systemctl']
         },
         {
-            category: 'Dev Tools',
-            items: ['Linux', 'Git', 'Docker', 'crontab', 'systemctl', 'pdfplumber', 'Eclipse IDE', 'VS Code', 'Antigravity']
+            category: 'Data Processing',
+            items: ['Pandas', 'ETL pipelines', 'pdfplumber']
         },
         {
             category: 'Additional',

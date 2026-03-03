@@ -13,14 +13,13 @@ Backend-focused Software Engineer with demonstrated success in building automati
 
 ## SKILLS
 
-**Languages:** Python, Java, JavaScript
-**Backend & Frameworks:** Streamlit, J2EE, FastAPI, Redis
-**Frontend Tools:** Streamlit, HTML, CSS
-**Database Management:** QuestDB, MySQL, DuckDB (MotherDuck)
-**Data Tools:** Pandas, CSV pipelines
-**Tools:** Linux, Git, Docker, crontab, systemctl, pdfplumber, Eclipse IDE, VS Code, Antigravity
-**Additional:** Technical analysis, market data strategy, risk automation
-
+**Languages:** Python, Java, JavaScript 
+**Backend & Frameworks:**  Streamlit, J2EE, FastAPI, Redis
+**Frontend Tools:** HTML, CSS
+**Cloud Platforms:** AWS (S3, EC2), OCI
+**Databases:** QuestDB, Redis, MySQL, DuckDB (MotherDuck)
+**DevOps:** Docker, Linux, Git, crontab, systemctl
+**Data Processing:** Pandas, ETL pipelines, pdfplumber
 ---
 
 ## PROFESSIONAL EXPERIENCE
@@ -69,10 +68,12 @@ Backend-focused Software Engineer with demonstrated success in building automati
 
 *Jul 2022 – Jul 2024*
 
-* Delivered 4 web applications with dynamic content and secure membership features.
-* Created MySQL-backed systems for registration, payments, and profile workflows.
-* Improved site performance with responsive UIs using HTML, CSS, and JavaScript.
 
+**Delivered 4 web applications including membership management systems and dynamic websites.**
+**Developed responsive front-end interfaces using HTML, CSS, and JavaScript.**
+**Designed and managed MySQL databases for user registration, payments, and profile workflows.**
+**Automated membership processes, reducing manual processing time by 30%.**
+**Improved UI/UX, site performance, and resolved front-end and database issues in collaboration with cross-functional teams.**
 ---
 
 ## EDUCATION

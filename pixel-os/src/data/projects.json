@@ -4,6 +4,7 @@
         "name": "MemoryPing.ai",
         "type": "system",
         "icon": "brain",
+        "url": "https://memoryping.online",
         "param": {
             "problem": "Generic reminder bots lack context awareness.",
             "solution": "Hybrid NLP Router (Regex + Scikit-Learn) with vector embeddings.",
@@ -22,6 +23,7 @@
         "name": "Thulasi SaaS",
         "type": "system",
         "icon": "server",
+        "url": "https://thulasi.xyz",
         "param": {
             "problem": "Tuition centers struggle with scheduling & billing.",
             "solution": "Microservices platform with 'Smart Timetable' detection.",
@@ -58,6 +60,7 @@
         "name": "LaNéa Gifting",
         "type": "website",
         "icon": "gift",
+        "url": "https://lanea.online",
         "param": {
             "problem": "Standard e-commerce templates feel cheap.",
             "solution": "Zero-dependency Vanilla JS with custom 3D magnetic tilt.",
@@ -75,6 +78,7 @@
         "name": "Thulasi Web",
         "type": "website",
         "icon": "globe",
+        "url": "https://thulasi.xyz",
         "param": {
             "problem": "SaaS landing pages need to convert.",
             "solution": "Performance-first design with 3D Particle Vortex.",
@@ -92,6 +96,7 @@
         "name": "MemoryPing Web",
         "type": "website",
         "icon": "brain",
+        "url": "https://memoryping.online",
         "param": {
             "problem": "AI assistants need gamified, engaging presentations.",
             "solution": "Vanilla HTML/JS with Web Audio API & Canvas Games.",
@@ -106,13 +111,14 @@
     },
     {
         "id": "portfolio",
-        "name": "Pixel-OS Portfolio",
+        "name": "Portfolio (React)",
         "type": "website",
         "icon": "globe",
+        "url": "https://achuvijayakumar.online",
         "param": {
             "problem": "Standard portfolios lack memorable storytelling.",
-            "solution": "React/Vite SPA with custom 3D Canvas & GSAP Motion.",
-            "impact": "Boutique, high-motion animated storytelling experience.",
+            "solution": "React 18 / Vite SPA with GSAP, Three.js R3F & Framer Motion.",
+            "impact": "Ultra-premium, hardware-accelerated animated storytelling experience.",
             "stack": [
                 "React 18",
                 "TailwindCSS",
@@ -120,6 +126,42 @@
                 "Three.js"
             ]
         },
-        "content": "A premium personal portfolio with a 3D R3F particle swarm, framer-motion grids, Spline embeds, and intricate scroll-triggered micro-interactions."
+        "content": "An ultra-premium interactive SPA leveraging GSAP ScrollTrigger, Framer Motion, and a custom Three.js R3F circuit board background. Features a magnetic GSAP cursor, Lenis smooth scrolling, lazy-loaded routes with chunk-error retry, and strict reduced-motion accessibility."
+    },
+    {
+        "id": "portfolio-html",
+        "name": "Portfolio (HTML)",
+        "type": "website",
+        "icon": "globe",
+        "url": "https://v1.achuvijayakumar.online",
+        "param": {
+            "problem": "Portfolios need to load instantly with zero dependencies.",
+            "solution": "Pure Vanilla HTML/CSS/JS with custom Canvas 2D particle engine.",
+            "impact": "Lightning-fast retro Win95 OS-themed portfolio with near-perfect Lighthouse scores.",
+            "stack": [
+                "HTML5",
+                "CSS3",
+                "Vanilla JS"
+            ]
+        },
+        "content": "A zero-dependency retro OS portfolio featuring a custom PixelParticle Canvas engine with mouse repulsion physics, CRT scanline overlays, Win95 inset/outset depth, scroll-spy taskbar, and CSS glitch effects on hover."
+    },
+    {
+        "id": "portfolio-os",
+        "name": "Portfolio (Pixel-OS)",
+        "type": "website",
+        "icon": "globe",
+        "url": "https://v2.achuvijayakumar.online",
+        "param": {
+            "problem": "Interactive portfolios need a unique desktop OS metaphor.",
+            "solution": "Vanilla TypeScript + Vite with InteractJS window management.",
+            "impact": "Boutique windowed OS experience with CSS-only backgrounds and dynamic imports.",
+            "stack": [
+                "TypeScript",
+                "Vite",
+                "InteractJS"
+            ]
+        },
+        "content": "A fully windowed OS portfolio built in Vanilla TypeScript. Features a z-index managed WindowManager, InteractJS drag-and-drop at 60FPS, boot sequence terminal simulation, CSS-only animated grid and CRT scanlines, and lazy-loaded app modules."
     }
 ]
