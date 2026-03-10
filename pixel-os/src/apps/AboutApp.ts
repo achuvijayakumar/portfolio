@@ -15,7 +15,7 @@ export function createAboutApp(): HTMLElement {
         </div>
         <h2 style="font-size:24px; margin-bottom:4px;">${profile.name}</h2>
         <p style="color:var(--accent); margin-bottom:8px; font-size:14px; text-transform:uppercase; letter-spacing:2px;">${profile.role}</p>
-        <div style="display:inline-block; border:1px solid var(--accent); padding:3px 12px; font-size:13px; color:var(--accent); border-radius:4px; box-shadow: 0 0 8px rgba(0,229,255,0.15);">${profile.status}</div>
+        <a href="./Achuvijayakumar_resume.pdf" download="Achuvijayakumar_resume.pdf" style="display:inline-block; padding:6px 16px; font-size:13px; color:var(--bg-color); background-color:var(--accent); border-radius:4px; text-decoration:none; box-shadow: 0 0 8px rgba(0,229,255,0.3); font-weight:bold; cursor:pointer; font-family:var(--font-mono);">[ ↓ DOWNLOAD RESUME ]</a>
     </div>
 
     <div style="border-top:1px solid var(--border-color); padding-top:16px; margin-top:16px;">
